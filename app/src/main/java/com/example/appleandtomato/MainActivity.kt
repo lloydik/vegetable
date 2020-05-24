@@ -9,5 +9,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val a = 0
         print(a)
+        print("iq")
     }
 }
