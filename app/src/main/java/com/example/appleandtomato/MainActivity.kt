@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Timer("SettingUp", false).schedule(500) {
-            doSomething()
+            //doSomething()
         }
     }
     fun setOnClickListener(view: View){
