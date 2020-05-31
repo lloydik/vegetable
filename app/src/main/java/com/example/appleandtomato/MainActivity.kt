@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 txw.setText("Работа")
                 seconds = 0
             }
-            txtime.setText(workSecs.toString())
+            txtime.setText((workSecs / 60).toString() + ":" + (workSecs % 60).toString())
         }
     }
 }
