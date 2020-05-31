@@ -13,12 +13,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     var seconds = 0
-    fun setOnClickListener(view: View){
-        var workSecs: Int = ettw.text.toString().toInt()
+    var work = true
+    fun playEvent(view: View){
+        var workSecs: Int = ettw.text.toString().toInt() * 60
         val interval: Long = 500
         Timer("SettingUp", false).schedule(interval) {
-
+            seconds++
+            if((seconds > workSecs) && (work))
+                work = false
+            txtime.setText(workSecs.toString())
         }
-        txtime.setText(workSecs.toString())
     }
 }
