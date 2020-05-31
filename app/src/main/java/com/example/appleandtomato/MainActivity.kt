@@ -16,11 +16,22 @@ class MainActivity : AppCompatActivity() {
     var work = true
     fun playEvent(view: View){
         var workSecs: Int = ettw.text.toString().toInt() * 60
+        var breakSecs: Int = ettb.text.toString().toInt() * 60
         val interval: Long = 500
         Timer("SettingUp", false).schedule(interval) {
             seconds++
             if((seconds > workSecs) && (work))
+            {
                 work = false
+                txw.setText("Отдых")
+                seconds = 0
+            }
+            else if((seconds > breakSecs) && (!work))
+            {
+                work = true
+                txw.setText("Работа")
+                seconds = 0
+            }
             txtime.setText(workSecs.toString())
         }
     }
