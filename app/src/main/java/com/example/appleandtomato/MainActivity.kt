@@ -11,13 +11,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Timer("SettingUp", false).schedule(500) {
-            //doSomething()
-        }
     }
+    var seconds = 0
     fun setOnClickListener(view: View){
-        var workSecs: Int = txwork.text.toString().toInt()
-        workSecs--
+        var workSecs: Int = ettw.text.toString().toInt()
+        val interval: Long = 500
+        Timer("SettingUp", false).schedule(interval) {
+
+        }
         txtime.setText(workSecs.toString())
     }
 }
